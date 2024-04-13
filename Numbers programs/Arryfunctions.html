@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Functions </title>
+ </head>
+ <body>
+     <script>
+               marks = [
+              { subject: "Maths", marks: 45 },
+              { subject: "Science", marks: 90 },
+              { subject: "English", marks: 15 },
+              { subject: "EVS", marks: 55 }
+               ];
+ 
+                // 1. Print all subjects along with marks
+
+                 console.log("1. Subjects along with marks:");
+              marks.forEach(subject => {
+               console.log(`${subject.subject}: ${subject.marks}`);
+             });
+
+             // 2. Print subjects where marks > 29
+
+             console.log("\n2. Subjects where marks > 29:");
+              var subjectsAbove29 = marks.filter(subject => subject.marks > 29);
+              subjectsAbove29.forEach(subject => {
+              console.log(`${subject.subject}: ${subject.marks}`);
+               });
+
+               // 3. Print total marks of the student
+
+               console.log("\n3. Total marks of the student:");
+              var totalMarks = marks.reduce((total, subject) => total + subject.marks, 0);
+               console.log(`Total Marks: ${totalMarks}`);
+
+               // 4. Add grace mark 10 if marks is less than 20 and print all marks
+
+                 console.log("\n4. All marks with grace marks added if less than 20:");
+               var marksWithGrace = marks.map(subject => ({
+              subject: subject.subject,
+                marks: subject.marks < 20 ? subject.marks + 10 : subject.marks
+                    }));
+               marksWithGrace.forEach(subject => {
+               console.log( `${subject.subject}: ${subject.marks}`);
+                });      
+
+
+                console.log("\n4. All marks with grace marks added if less than 20:");
+
+                 let grade = marks.map((value) => {
+                   if(value.marks){
+                   value.marks = value.marks + 10
+                 }
+                  return value;
+                     });
+                  console.log(grade)
+
+
+
+      </script>
+ </body>
+</html>

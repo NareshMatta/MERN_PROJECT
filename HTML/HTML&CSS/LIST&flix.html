@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Assignment</title>
+
+    <style>body, html {
+        margin: 0px;
+        border: dashed 5px;
+        padding: 50px;
+    }
+    .container{
+            display: flex;
+            height: 100px;
+            flex-direction: row;/* try column*/
+            background-color: greenyellow;
+            /* flex-wrap: wrap;try more flex types */
+            justify-content: center;
+/* justify-content: left;
+justify-content: right;
+justify-content: end; */
+/* justify-content: space-around; */
+justify-content: space-between;
+
+align-items: center;
+/* align-items: flex-start;
+align-items: flex-end;
+align-items: end; */
+
+        }
+        .container >div{
+            background-color: aqua;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+    ul{
+            margin: 0px;
+            padding: 0px;
+            background-color: royalblue;
+           
+        }
+        li{
+            display: inline-block;
+            padding: 5px;
+        }
+        li:hover{
+            background-color: aqua;
+        }
+        .submenu{
+            display: none;
+            position: absolute;/*relative*/
+        }
+        .menu:hover .submenu{
+            display: block;
+        }
+        .c{
+            border: 1px solid;
+
+            size: 20px;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div>cricket</div>
+        <div>Movies</div>
+        <div>Office</div>
+        <!-- <div>Hostals</div>
+        <div>Sleeping</div> -->
+        </div>
+    </div>
+    <ul>
+       <li> <img src="C:\Users\LENOVO-V15\Pictures\mynthara.logo.PNG" alt="mynthra logo"  width="150" height="100"</right></li>
+            <li>MEN</li>
+            <li >   Women    </li>
+            <li class="menu">SEALES
+                <div class="submenu"><br>
+                    <a href="#">cloths</a><br>
+                    <a href="#">T-shirts</a><br>
+                    <a href="#">Jeans</a><br>
+                    <a href="#">Shirts</a><br>
+                </div>
+            </li>
+            <li>Kids</li>
+            <LI>HOME&LEAVING</LI>
+            <LI>Studio</LI>
+        </ul>
+<br><br><br><br>
+      <form class="c" align="center">
+        <h1>Login to your acount</h1>
+        <input  placeholder="Email or Phone Number" style="height: 50px; width: 300px;"><br><br>
+         <input type="password" value="password" style="height: 50px; width: 300px;">
+         <br>
+         <br>
+         <input type="button" value="LOGIN" style="height: 50px; width: 300px;">
+         <p>Forgotpassword? <a href="https://www.myntra.com/forgot">Reset Hear</a></p>
+         <p>Have trobul logging in? <a href="https://www.myntra.com/contactus">Get Help</a></p>
+         
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj1 = {name:"nani",age:25};
+        obj1.age=26;
+       // obj1 = {...obj1,age:22};
+        console.log(obj1);
+
+        //add and push spread operateror
+       var students=[
+        {name:"nani",age:25},
+        {name:"hari",age:28},
+       ];
+      // students.push({name: "Mike",age:29});
+       students =[...students, {name:"hari nani",age:26}];
+       console.log(students)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Seles Force Report</h1><hr>
+    <p>Vehicle <label id="v"></label></p>
+    <p>Car <label id="c"></label></p>
+    <p>Brand <label id="b"></label></p><hr>
+
+    <div id="Vehicle" onclick="fv()">
+        Sell a Vehicle
+        <div id="Car" onclick="fc()">
+            Sell a Car
+            <div id="Brand" onclick="fb()">Sell a ford</div>
+        </div>
+    </div>
+    <script>
+        let vnum=0;
+        let cnum=0;
+        let bnum=0;
+
+        const fv = () => {
+            alert("Sold a vehicle");
+            vnum +=1;
+            v.innerHTML = vnum;
+        }
+        
+        const fc = () =>{
+            alert("sold a car");
+            cnum +=1;
+            c.innerHTML = cnum;
+        }
+        const fb = () => {
+            alert("sold a ford brand");
+            bnum +=1;
+            b.innerHTML = bnum
+        }
+    </script>
+</body>
+</html>

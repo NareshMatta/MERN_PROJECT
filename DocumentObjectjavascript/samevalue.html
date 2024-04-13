@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p><input type="number" id="n1"></p>
+   <button onclick="sqr()">Submit</button>
+   <hr>
+    <p id="p1"></p>
+
+    <script>
+        let sqr = () => {
+            //model-1
+
+        //    let n = n1.value;
+        //    p1.innerHTML = n * n;
+
+            // model-2
+            let n = document.getElementById("n1").value;
+            p1.innerHTML = n * n;
+
+            // model-3
+            // let n = document.querySelector("#n1").value;
+            // p1.innerHTML = n * n;
+
+        }
+    </script>
+</body>
+</html>

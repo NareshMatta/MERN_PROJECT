@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form>
+    <p><input type="radio" name="fruit"  value="apple">Apple</p>
+    <p><input type="radio" name="fruit" value="banana">Banana</p>
+    <p><input type="radio" name="fruit"  value="graps">Graps</p>
+    <input type="button" onclick="disp()" value="Submit">
+   </form>
+   <hr>
+   <div id="d"></div>
+   <script>
+    const disp = () =>{
+        let fruit = document.forms[0];
+        let txt =" ";
+        let i;
+        for (i = 0; i< fruit.length; i++){
+            if (fruit[i].checked){
+                txt = txt + fruit[i].value + " ";
+            }
+        }
+        d.innerHTML = txt;
+    };
+   </script>
+</body>
+</html>

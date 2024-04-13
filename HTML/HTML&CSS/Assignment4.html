@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+   
+   <style>body, html {
+    margin: 2px;
+    padding: 0px;
+    text-align: center; /* Center content */
+}
+ 
+@keyframes topics
+{
+from{
+      transform: rotate(0deg);
+                left:0px
+            }
+            to{
+                transform: rotate(360deg);
+                left: 200px;
+            }
+        }    
+        img{
+            width: 250px;
+            height: 200px;
+            /* background-color: blueviolet; */
+            position: relative;
+            /* margin: auto; */
+            animation-name: topics;
+            animation-duration: 10s;
+            /* animation-delay: 1s; */
+            animation-iteration-count: infinite;         /*try infinity*/
+            animation-duration: alternate;       /*reverse alternative-resource*/
+            animation-timing-function: ease-out;  /*ease,liner,ease-in,ease-in-out*/
+            animation-fill-mode: forwards;          /*retains the style after*/
+            
+        }
+
+
+.content {
+    display: flex;
+    justify-content: center; /* Centers the flex items horizontally */
+    margin: 0px 0;
+    display: grid; 
+    grid-template-columns: auto auto  auto;
+    
+}
+
+.box {
+    width: 400px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed for non-image boxes */
+    margin: 40px;
+    border: 5px dashed red; /* Example border color */
+    display: flex;
+    justify-content: center; /* Center content inside the box */
+    align-items: center; /* Center content vertically */
+    display: grid; 
+    /* transform: skew(10deg, 30deg); */
+   
+}
+
+.box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.p{
+    color: darkblue;
+}
+
+.mixed-row .box {
+    height: auto; /* Adjust height for mixed content */
+    
+   
+}
+
+div:hover{
+     background-color: chartreuse;
+}
+
+</style>
+
+</head>
+<body style="background-color: aquamarine;">
+
+    <div class="header" style="color: red;">
+        <h1> Assignment </h1>
+    </div><hr><br><br><br>
+    <img src="C:\Users\LENOVO-V15\Downloads\images (3).jfif" alt="logo" class="img" >
+    <br><br><br>
+
+    <div class="content images-row">
+        
+        
+        <div class="box"> <img src="C:\Users\LENOVO-V15\Downloads\GEC_MAIN_BUILDING_LATEST.jpg" class="c" alt="Image" width="500px" height="250px"></div>
+        <div class="box"><img src="C:\Users\LENOVO-V15\Downloads\images (3).jfif" alt="Image 2" width="500px" height="250px"></div>
+        <div class="box"><img src="C:\Users\LENOVO-V15\Downloads\download (8).jfif" alt="Image 3" width="500px" height="250px"></div>
+    </div>
+    
+    <div class="content mixed-row">
+        <div class="box"><img src="C:\Users\LENOVO-V15\Downloads\pexels-simon-berger-1266810.jpg" alt="Image 4" width="500px" height="250px"></div>
+        <div class="box"><p class="p">Hello World Good Morning Everyone How are you all </p></div>
+    </div>
+    
+    <div class="content images-row">
+        <div class="box"><p class="p">Hello World Good Morning Everyone How are you all .</p></div>
+        <div class="box"><img src="C:\Users\LENOVO-V15\Downloads\IMG_20231126_003517.jpg" alt="Image 6" width="500px" height="250px"></div>
+    </div>
+    <div>
+        <footer>
+            <marquee behavior="alternate" direction="right" scroulamount="10" style="color: blueviolet;" ><b>Natural Star Nani</b></marquee>
+            <br>
+            <marquee behavior="alternate" direction="left" scroulamount="10" style="color: rgb(236, 10, 10);" ><b>Naresh Babu</b></marquee>
+            <p><a href="c:\Users\LENOVO-V15\Downloads\KGF-2-Don-Bgm-Ringtone.mp3" target="frm"> GLimps </a></p>
+             <iframe name="frm" frameborder="0" width="500px" height="300px"></iframe>
+        </footer>
+    </div>
+    
+</body>
+</html>

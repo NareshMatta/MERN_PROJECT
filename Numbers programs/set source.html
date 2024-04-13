@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = new Set(["apple", "banana", "cherry", "grapes"]);
+        // console.log(s);
+        // console.log(s.size);
+
+        s.add("orange");
+        console.log(s);
+        console.log(s.size);
+
+        // console.log(s.has("cherry"));
+        // s.delete("cherry");
+        // console.log(s);
+
+        // s.clear();
+        // console.log(s.size);
+
+        s.forEach((value, valueagain, set) => {
+            console.log(value, valueagain,set);
+        });
+
+
+
+    </script>
+</body>
+</html>

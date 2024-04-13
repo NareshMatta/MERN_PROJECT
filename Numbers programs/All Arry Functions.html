@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = ["Apple", "orange","Mango","Banana"];
+       // let fruits = new Array("Apple","mango","orane");
+        console.log(fruits[0]);
+        console.log(fruits.length);
+
+        console.log(fruits.at(-1)); //or fruits[fruits.lengt-1];
+        fruits.push("cherry", "papaya"); //appends in the end- can add multiple
+        console.log(fruits);
+        fruits.pop();// removes last element
+        console.log(fruits);
+        fruits.shift(); // removes the first element
+        console.log(fruits);
+        fruits.unshift("plum", "pears");// adds im the begienning - can add multiple
+        console.log(fruits);
+        console.log(fruits.reverse());
+        fruits.sort();//for desc - and reverse 
+        console.log(fruits);
+        let num =[4,17,3,5];
+         console.log(num.sort());
+        num.sort(function(a,b) {
+            return a - b;}
+        );// for ascending
+
+        //let num1 =[4,17,3,5];
+       // console.log(num1);
+        num.sort(function (a , b){
+            return b - a;
+        }); // for ascending
+        
+        console.log(fruits.indexOf("Apple"));
+        console.log(fruits.lastIndexOf("Apple")); // if apple appears multiple times
+        console.log(fruits.includes("Apple"));
+        // push/pop run fast, while shift/unsift run slowdue to rearrangements
+
+        
+        </script>
+    
+</body>
+</html>

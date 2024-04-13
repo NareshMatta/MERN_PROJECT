@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retirement Calculator</title>
+</head>
+<body>
+    <h1>Retirement Calculator</h1>
+    <label for="dob">Enter your date of birth:</label>
+    <input type="date" id="dob">
+    <button onclick="calculateRetirement()">Calculate</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateRetirement() {
+            const dobInput = document.getElementById('dob').value;
+            const dob = new Date(dobInput);
+            const today = new Date();
+            const retirementAge = 60;
+
+            const ageDiffMs = today - dob; // difference in milliseconds
+            const ageDate = new Date(ageDiffMs);
+            const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+            const yearsLeft = retirementAge - age;
+
+            let resultMessage;
+            if (yearsLeft > 0) {
+                resultMessage = `You have ${yearsLeft} years left until retirement.`;
+            } else if (yearsLeft < 0) {
+                resultMessage = "You are already eligible for retirement.";
+            } else { // yearsLeft === 0
+                resultMessage = "Congratulations on your retirement year!";
+            }
+
+            document.getElementById('result').textContent = resultMessage;
+        }
+    </script>
+</body>
+</html>

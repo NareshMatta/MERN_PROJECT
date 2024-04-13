@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+</head>
+<body>
+    <h2>Employee Registration Form</h2>
+    <form>
+          <label for="name">Name:</label>
+         <input type="text" id="name" name="name" required><br><br>
+
+         <label for="dob">Date of Birth:</label>
+         <input type="date" id="dob" name="dob" required><br><br>
+
+         <label for="department">Department:</label>
+         <select id="department" name="department" required>
+            <option value="Select">Select</option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Admin">Admin</option>
+         </select><br><br>
+
+          <fieldset>
+            <legend>Qualification:</legend>
+            <input type="checkbox" id="BE" name="qualification" value="BE">
+            <label for="BE">BE</label><br>
+            <input type="checkbox" id="Btech" name="qualification" value="Btech">
+            <label for="Btech">Btech</label><br>
+            <input type="checkbox" id="Mba" name="qualification" value="Mba">
+            <label for="Mba">Mba</label><br>
+            <input type="checkbox" id="BBA" name="qualification" value="BBA">
+            <label for="BBA">BBA</label><br>
+          </fieldset><br>
+
+         <fieldset>
+            <legend>Gender:</legend>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="Other" required>
+            <label for="other">Other</label><br>
+          </fieldset><br>
+            <button type="button" id="submitBtn">Submit</button>
+     </form>
+
+     <div id="submittedInfo" style="display:none;">
+        <h3>Submitted Information:</h3>
+        <div id="info"></div>
+        <button id="confirmButton">Confirm</button>
+     </div>
+
+     <script>
+         document.getElementById('submitBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const dob = document.getElementById('dob').value;
+            const department = document.getElementById('department').value;
+            const qualifications = document.querySelectorAll('input[name="qualification"]:checked');
+            let qualificationList = [];
+            qualifications.forEach((checkbox) => {
+                qualificationList.push(checkbox.value);
+            });
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+
+            const name1 = document.getElementById('info');
+            name1.innerHTML = `<p>Name: ${name}</p>
+                                 <p>Date of Birth: ${dob}</p>
+                                 <p>Department: ${department}</p>
+                                 <p>Qualifications: ${qualificationList.join(', ')}</p>
+                                 <p>Gender: ${gender}</p>`;
+            document.getElementById('submittedInfo').style.display = 'block';
+         });
+
+         document.getElementById('confirmButton').addEventListener('click', function() {
+            location.reload(); 
+         });
+         // Reload the page out put will come
+    </script>
+
+
+</body>
+</html>

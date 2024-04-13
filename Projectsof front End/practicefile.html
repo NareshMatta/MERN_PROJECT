@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+
+    <style>
+        .container {
+          display: flex;
+          width: 1200px;
+          margin: auto;
+        }
+        .divmain {
+          width: 150px;
+          padding: 30px;
+          line-height: 30px;
+          border-right: solid 2px black;
+          align-items: center;
+          height: 500px;
+        }
+        .divProducts {
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: 20px;
+          column-gap: 40px;
+          padding: 30px;
+        }
+        .divProduct {
+          width:300px;
+          text-align: center;
+  
+        }
+        </style>
+
+  </head>
+ <body style="background-color: azure;">
+    <h1>Fruites Market </h1>
+    <hr>
+    <div class="container">
+    <div class="divmain"></div>
+    <div class="divProducts"></div>
+    </div>
+   <script>
+
+      let divmain = document.querySelector(".divmain");
+      let divProducts = document.querySelector(".divProducts");
+
+    let categeories = [
+        { id: 1, name: "fruits"},
+        {  id: 2, name: "vegetables"},
+    ];
+
+    let fruits = [
+     {
+        id:1,
+        name: "tamato",
+        price:10,
+        cid:2,
+        image:"image/download1.jpg" 
+     },
+     {
+        id:1,
+        name: "carate",
+        price:20,
+        cid:2,
+        image:"image/download2.jpg" 
+     },
+     {
+        id:1,
+        name: "Watermelon",
+        price:80,
+        cid:1,
+        image:"download3.jpg" 
+     },
+     {
+        id:1,
+        name: "promogranate",
+        price:40,
+        cid:1,
+        image:"image/download4.jpg" 
+     },
+    ];
+    
+
+      const showMain = () => {
+        let txt = "";
+        categories.forEach((value) => {
+          txt += `
+          <li onclick='showfruits(${value.id})'>${value.name}</li>
+        `;
+        });
+        divMain.innerHTML = txt;
+      };
+
+      const showfruits = (id) => {
+        let txt = "";
+        fruits.forEach((value) => {
+          if (value.cid == id) {
+            txt += `<div class='divProduct'>
+            <div><img width='150px' src=${value.image}></div>
+            <div>${value.name}</div>
+            <div>${value.price}</div>
+            <div><button>Add</button></div>
+            </div>`;
+          }
+        });
+        divProducts.innerHTML = txt;
+      };
+      showMain();
+      // showProducts();
+      </script>
+</body>
+</html>

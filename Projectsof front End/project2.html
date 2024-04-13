@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .c{
+            width: 350px;
+            height: 300px;
+            padding: 10px;
+            margin: auto;
+            background-color: aquamarine;
+            text-align: center;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+        }
+        .h{
+            width: 350px;
+            padding: 10px;
+            margin: auto;
+            background-color: aquamarine;
+            text-align: center;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <form>
+    <div class="c">
+    <label><h1>New Customer Form</h1></label>
+    <input placeholder="Enter name"><br><br>
+    <input placeholder="Enter Email"><br><br>
+    <input placeholder="phone number"><br><br>
+    <input type="button" onclick="addUser()" value="ADD"  style="width: 180px; height: 25px; background-color: bisque;"/>
+</div><br><br>
+
+<div id="h1" class="h">
+    <h2>Details</h2>
+
+</div>
+</form>
+<script>
+let userArray = [];
+let userInput = document.getElementsByTagName("input");
+const addUser = () =>{
+    let userObj = {};
+    userObj.name = userInput[0].value;
+    userObj.email = userInput[1].value;
+    userObj.phone = userInput[2].value;
+    userArray.push(userObj);
+        //console.log(userArray)
+    showUsers();
+    document.getElementById("frm");
+       // showUsers();
+}
+
+const showUsers = () =>{
+    let str = `<table><thead><tr>
+             <th>Name</th>
+             <th>Email</th>
+             <th>Phone</th>
+             </tr></thead>`; 
+             userArray.forEach((element,index) =>{
+                str += `<tr>
+                    <td>${element.name}</td>
+                    <td>${element.email}</td>
+                    <td>${element.phone}</td>
+
+                        <td><i class="fa fa-edit" onclick="editUser(${index})"></i></td>
+                        <td><i class="fa fa-trash-o" onclick="deleteUser(${index})"></i></td>
+
+                    <td><input type="button" value="edit" onclick='editUser(${index})'></input></td>
+                    <td><input type="button" value="delete"  onclick='deleteUser(${index})'></input></td>
+                    </tr>`;
+             })
+             str = str+`</table>`;
+             h1.innerHTML = str;
+             console.log(str);
+            
+             }
+              const deleteUser = (index) => {
+              delete userArray[index];
+              document.getElementById("myfrm");
+              showUsers();
+              };
+
+              const editUser = (element) => {
+                userArray[element];
+              document.getElementById("myfrm");
+              showUsers();
+              };
+
+</script>
+</body>
+</html>

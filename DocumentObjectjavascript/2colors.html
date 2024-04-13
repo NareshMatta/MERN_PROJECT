@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          .dark{
+            background-color: aqua;
+            color: red
+         }
+         .light{
+            background-color: chartreuse;
+            color: darkblue;
+         }
+    </style>
+</head>
+<body>
+    
+     <button onclick="darkTheme()">Dark Theam</button>
+     <button onclick="lightTheme()">Light Theam</button>
+     <hr>
+     <div id="d" class=""><h3>Hello World</h3></div>
+     <script>
+        const darkTheme = () =>{
+            d.classList.remove("light");
+            d.classList.add("dark");
+        };
+        const lightTheme = () =>{
+            d.classList.remove("dark");
+            d.classList.add("light");
+        }
+     </script>
+
+</body>
+</html>

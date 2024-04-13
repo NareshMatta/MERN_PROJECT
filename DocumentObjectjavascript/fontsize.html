@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><input type="number" id="t1"></p>
+    <button onclick="changefont()">Submit</button>
+
+
+    <p><input type="text" id="t2"></p>
+    <button onclick="changeColor()">Submit</button>
+    <hr>
+    <div id="d">Hello World</div>
+
+    <script>
+                //change font-size
+
+         let changefont = () => {
+            let size = t1.value;
+            d.style.fontSize = size+"px";
+         };
+
+                // change Color
+                
+         let changeColor = () => {
+            let clr = t2.value;
+            d.style.color = clr;
+           d.style.background = clr;
+         };
+
+    </script>
+
+    
+</body>
+</html>

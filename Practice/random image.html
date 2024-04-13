@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="Button">Refresh</button><br><br><hr><br><br>
+    <!-- <div id="image1"> -->
+        <img id="main" src="2.jpg">
+    </div>
+    <script>
+        
+        const image1 = ["2.jpg", "3.jpg","1.jpg"];
+        let Button = document.getElementById("Button");
+        let main = document.getElementById("main");
+        Button.addEventListener("click", function() {
+        let random = Math.floor(Math.random() * image1.length);
+        const newd = image1[random];
+         main.src = newd;
+      });
+
+
+    //   let index = Math.round(Math.random() * );
+    //   let str =`<img src='${main[index].image}'>`;
+    //   main.innerHtml = str;
+
+    </script>
+</body>
+</html>

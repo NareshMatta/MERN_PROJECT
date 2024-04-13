@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+        #main{
+    display: inline-flex;
+    margin-left: 40%;}
+
+    input,button {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid navy;
+    border-radius: 3px;
+}
+
+button {
+    background-color:dodgerblue;
+    color: white;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.details h2{
+margin-top: 0;
+text-align: center;
+}
+.details{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+            <h2>Enter Your Details</h2>
+                <input type="text" id="name" name="name" placeholder="Enter Name:"><br>
+                <input type="tel" id="phone" name="phone" placeholder="Enter Phone:"><br>
+                <input type="email" id="email" name="email" placeholder="Enter Email:"><br>
+                <button type="submit" onclick="addUser()">Submit</button>
+            </div>&nbsp; &nbsp; &nbsp; &nbsp;
+        <div class="details" id="details" style="border: 1px solid black; ">
+            <h2>Details</h2>
+        </div>
+        
+    <script>
+        let store=[];
+        let userInput=document.getElementsByTagName("input");
+        function addUser() {
+          let newObj={};
+          console.log("ok");
+
+            newObj.name=userInput[0].value;
+            newObj.phone=userInput[1].value;
+            newObj.email=userInput[2].value;
+            store.push(newObj);
+            console.log(store);
+            showUsers();   
+            document.getElementById("myfrm").reset();  
+        }
+        function showUsers() {
+            let str=` <h2>Details</h2>
+            <div><table style="background-color:black; color:white; text-align:center" ><thead><tr>
+                    <th>Name</th>&nbsp;
+                    <th>Phone</th>&nbsp;
+                    <th>Email</th>
+                    </tr></thead>
+                </table>
+                </div>`;
+            store.forEach((element,index)=>{
+                str+=` <tr>
+            <td>${element.name}</td>
+            <td>${element.phone}</td>
+            <td>${element.email}</td>
+            <td><i class="fafedit" onclick="editUser(${index})">
+                </i></td>
+                <td><i class="faftrash" onclick="deleteUser(${index})"></i></td>
+        </tr> <br>`;
+        details.innerHTML=str;
+            });    
+        }
+    </script>
+</body>
+</html>

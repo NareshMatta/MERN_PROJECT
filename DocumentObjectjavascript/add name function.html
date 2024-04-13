@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="n1" placeholder="enter a name">
+    <button onclick="disp()">Add</button>
+    <hr>
+    <select id="s"></select>
+    <script>
+         const fruits=[];
+         var disp=()=>{
+            let b=n1.value;
+            let opt=document.createElement("option");
+            fruits.push(b);
+            for(var i=0;i<fruits.length;i++){
+            s.options[i]=new Option(fruits[i],fruits[i])
+            }
+         }
+         
+    </script>
+</body>
+</html>

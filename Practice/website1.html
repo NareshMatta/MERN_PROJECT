@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart-like Website</title>
+    <link rel="stylesheet" href="website1.css">
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
+        </div>
+        <div class="cart">
+            <img src="cart-icon.jpg" alt="Add to Cart" class="cart-icon">
+        </div>
+    </header>
+
+    <section class="body-section">
+        <div class="scrollable-images">
+            <!-- Add scrollable images here -->
+            <img src="product1.jpg" alt="Product 1">
+            <img src="product2.jpg" alt="Product 2">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <!-- Product display page -->
+    <section class="product-display">
+        <!-- Add product images, price, description, and add button here -->
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <div class="details">
+                <h3>Product Name</h3>
+                <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Price: $XX.XX</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more product cards as needed -->
+    </section>
+
+    <!-- Cart page -->
+    <section class="cart-page">
+        <!-- Display products added to cart with quantity controls -->
+        <div class="cart-item">
+            <img src="product1.jpg" alt="Product 1">
+            <div class="quantity-controls">
+                <button class="decrease-quantity">-</button>
+                <span class="quantity">1</span>
+                <button class="increase-quantity">+</button>
+            </div>
+            <p class="price">$XX.XX</p>
+        </div>
+        <!-- Add more cart items as needed -->
+        <div class="total-amount">
+            <p>Total Amount: $XX.XX</p>
+        </div>
+    </section>
+
+    <script>
+        document.querySelector('.cart-icon').addEventListener('click', function() {
+    document.querySelector('.product-display').style.display = 'none';
+    document.querySelector('.cart-page').style.display = 'block';
+});
+    </script>
+</body>
+</html>

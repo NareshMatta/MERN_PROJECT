@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onchange="changeColor(event.target.value)" type="text" id="t1"><br><br>
+    <!-- <input onchange="f1(event.target.value)" type="text" id="t1"> -->
+     <p onclick="f1(event.target.innerHTML)">This is a naresh from lyros team hyd</p>
+    <p onclick="f1(event.target.nodeName)">This is a naresh from lyros team hyd</p>
+    <p onclick="f1(event.target.tagName)">This is a naresh from lyros team hyd</p> 
+    <div id="d">Hello World</div>
+
+    <script>
+        const changeColor = (x) =>{
+            d.style.color=x
+        };
+
+        const f1 =(a) => {
+            console.log(a);
+        };
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>restarent home page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="restarent.css">
+</head>
+<body>
+    <div class="container">
+       <div class="h1"> <h1>Family Restarent</h1></div>
+        <div class="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Menu</a>
+                <a href="#">Galary</a>
+                <a href="#">Location</a>
+                <a href="#">Contact</a>
+        </div>
+        <div class="search">
+            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="head">
+        <div class="left">
+            <p>Are you very Hungery</p>
+            <h1>Don't weit</h1>
+            <p>Let start to order food now</p>
+
+            <button onclick="alert('well come to family restarent')">Check out Menu</button>
+        </div>
+        <div class="right" id="food"></div>
+        <div class="socialMedia">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+    </div>
+
+    <div class="button">
+        <div class="menu">
+            <div id="food1"></div>
+            <div id="food2"></div>
+            <div id="food3"></div>
+        </div>
+    </div>
+    
+    <script>
+        let food1s = document.getElementById('food1');
+        let food2s = document.getElementById('food2');
+        let food3s = document.getElementById('food3');
+
+        let foods = document.getElementById('food');
+
+        food1s.addEventListener('click',() =>{
+            foods.style.backgroundImage = "url('food1.jpg')";
+        });
+
+        food2s.addEventListener('click',() =>{
+            foods.style.backgroundImage = "url('food2.jpg')";
+        });
+
+        food3s.addEventListener('click',() =>{
+            foods.style.backgroundImage = "url('food3.jpg')";
+        });
+    </script>
+</body>
+
+</html>

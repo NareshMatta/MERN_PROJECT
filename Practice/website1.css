@@ -1,0 +1,118 @@
+/* Basic styles for header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.profile-image,
+.cart-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Styling for body section */
+.body-section {
+    padding: 20px;
+}
+
+.scrollable-images {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.scrollable-images img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Styles for product display */
+.product-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.details {
+    flex: 1;
+}
+
+.add-to-cart-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for cart page */
+.cart-page {
+    display: none;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.decrease-quantity,
+.increase-quantity {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.price {
+    margin-left: auto;
+}
+
+/* Total amount */
+.total-amount {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* Script to handle navigation between pages
+document.querySelector('.cart-icon').addEventListener('click', function() {
+    document.querySelector('.product-display').style.display = 'none';
+    document.querySelector('.cart-page').style.display = 'block';
+
+}    ); */

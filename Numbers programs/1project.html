@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-1</title>
+   <link rel="stylesheet" href="1project.css">
+ </head>
+ <body  style="background-color: aquamarine;">
+      <div><h1>My Wesite </h1></div>
+     <hr>
+     <div id="products" class="main"></div>
+     <br>
+     <hr>
+     
+     <div><h1>Favorite Fruite </h1></div>
+     <div id="mycart"></div>
+     
+     <div id="order"></div>
+     <div class="cart-icon"><img src="cart.svg" ></div>
+     <div id="c2"></div>
+     
+     <script>
+
+       let product = [
+       {
+        name: "Boost",
+        description: "stronger and helthy",
+        price: 32,
+        image:"3.jpg" 
+       },
+       {
+       name: "cudik chai",
+       description: "releaf the stree",
+       price: 42,
+       image: "1.jpg",
+       },
+       {
+       name: "honey tea",
+       description: "helthy",
+       price: 96,
+       image: "2.jpg",
+       },
+       {
+       name: "bru coffie",
+       description: "bed coffie",
+       price: 114,
+       image: "4.jpg",
+       },
+       {
+       name: "black tea",
+       description: "it's come color ",
+       price: 150,
+       image: "5.jpg",
+       },
+       {
+       name: "red lable",
+       description: "good evening",
+       price: 85,
+       image: "6.jpg",
+                
+       },
+       ];
+
+       let cart = [
+      //  {name: "apple",
+      //  drscription: "apple isa fruite.",
+      //  price: 30,
+      //  qty:5,
+      //  },
+      //  {name: "banana",
+      //   drscription: "apple isa fruite.",
+      //   price: 10,
+      //   qty:12,
+      //   },
+       ]
+
+       let msg= "";
+
+       //   let filterred = product.filter((value) => {
+       //     return value.price > 6
+       // filterred.forEach((value) => {
+       //   }) -
+
+            
+        product.forEach((value,order) => {
+        msg = msg + `<div class='container'> 
+        <div> <img width=200px src=${value.image}></div>
+        <div>${value.name}</div>
+        <div> ${value.description}</div>
+        <div>${value.price} </div>
+        <div> <button id="b${order}" onclick="addTocard(${order})">Add To Card </button></div>
+        </div>`
+        });
+        products.innerHTML = msg;
+
+        let txt =""
+        cart.forEach((value) => {
+        txt = txt + 
+        `<ul>
+        <li>${value.name}-${value.price}-${value.qty}-${value.price*value.qty}</li>
+        </ul>`
+                    
+       });
+       mycart.innerHTML = txt;
+       let total = cart.reduce((sum, value) =>{
+       return sum + value.price * value.qty;
+       },0);
+       
+       order.innerHTML = "Order value: " + total; 
+       
+      //  function inapp(){
+      //   products.forEach((value,key) =>{
+      //       let newDiv = document.createElement("div");
+      //       newDiv.classList.add("item");
+      //       newDiv.innerHTML = 
+      //       `<img src ="image/${value.image}">
+      //        <div class = "title">${value.name}>/div>
+      //        <div class = "price">${value.price.toLocaleString()}</div>
+      //        <button id="b${key}" onclick="addTocard(${key})">Add To Card </button>`;
+
+      //        list.append(newDiv);
+      //        });  
+           
+             function addTocard(order){
+              if(cart[order] ==null) {
+              // cart[order] = product[order];
+               cart[order] = JSON.parse(JSON.stringify(product[order]));
+               //cart[order].id = procuct[order].id;
+                cart[order].quantity = 1;
+              }else{
+               cart[order].quantity = cart[order].quantity + 1;
+              }
+              console.log(cart);
+              reloadcart();
+
+              }
+
+               function reloadcart(){
+                c2.innerHTML = "";
+                cart.forEach((value,order) =>{
+                  if(value != null){
+                    let newDiv = document.createElement("li");
+                    newDiv.innerHTML = `
+                              <div><img src="${value.image}"/></div>
+                              <div>${value.name}</div>
+                              <div>${value.price.toLocaleString()}</div>
+                      <div>
+                          <button onclick="changeQuantity(${order},${value.quantity - 1})">-</button>
+                           <div class="count">${value.quantity}</div>
+                           <button onclick="changeQuantity(${order},${value.quantity + 1})">+</button>
+                           </div>`;
+                           c2.appendChild(newDiv);
+                  }
+                }) ;
+               }
+              function changeQuantity(order, quantity){
+                if(quantity == 0){
+                  delete cart[order];
+                 } 
+                 else{
+                  cart[order].quantity = quantity;
+                  cart[order].price = quantity * product[order].price;
+                }
+                reloadcart();
+              }
+
+    
+     </script>
+ </body>
+</html>

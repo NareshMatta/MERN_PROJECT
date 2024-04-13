@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,50,0.8),rgba(0,0,50,0.8)),url(3.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.nav{
+    width: 30%;
+    height: 10px;
+    margin-top: auto;
+    border: 1px solid black;
+}
+
+.form-box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center;
+}
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+    background-color: silver;
+}
+form p {
+    text-align: left;
+    text-decoration: none;
+    color: #3c3c3c;
+}
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-field button{
+    flex-basis: 48%;
+    background: -moz-repeating-radial-gradient(#3c00a0);
+color: chocolate;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline:0;
+    cursor: pointer;
+    transition: background is;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #32a71a;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* .container {
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-box {
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.btn-field {
+    text-align: center;
+}
+
+.disable {
+    opacity: 0.5;
+    pointer-events: none;
+}

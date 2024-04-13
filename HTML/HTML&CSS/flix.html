@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            height: 200px;
+            flex-direction: row;/* try column*/
+            background-color: pink;
+            flex-wrap: wrap;/*try more flex types*/
+            justify-content: center;
+/* justify-content: left;
+justify-content: right;
+justify-content: end; */
+/* justify-content: space-around; */
+justify-content: space-between;
+
+align-items: center;
+/* align-items: flex-start;
+align-items: flex-end;
+align-items: end; */
+
+        }
+        .container >div{
+            background-color: aqua;
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 20px;
+        }
+        ul{
+            margin: 0px;
+            padding: 0px;
+            background-color: pink;
+        }
+        li{
+            display: inline-block;
+            padding: 10px;
+        }
+        li:hover{
+            background-color: aqua;
+        }
+        .submenu{
+            display: none;
+            position: absolute;/*relative*/
+        }
+        .menu:hover .submenu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+<div>cricket</div>
+<div>Movies</div>
+<div>Office</div>
+<!-- <div>Hostals</div>
+<div>Sleeping</div> -->
+</div>
+<div><img src="C:\Users\LENOVO-V15\Downloads\download (8).jfif" alt="logo"></div>
+</div>
+<ul>
+    <li>HOME</li>
+    <li class="menu">
+        Cources
+        <div class="submenu"><br>
+            <a href="#">JAVA</a><br>
+            <a href="#">TESTING</a>
+        </div>
+    </li>
+    <li>SELF</li>
+    <li>CONTACT PERSON</li>
+</ul>
+</body>
+</html>

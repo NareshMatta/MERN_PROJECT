@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <img src="logo.jpg" style="width: 150px;" id="logo" >
+    <script>
+        logo.style.position="absolute";
+         let i=1;
+         function add(){
+          i++;
+          logo.style.top= i + "px";
+          logo.style.left= 90 +"px";
+          if(i < 550){
+           setTimeout(add, 10);
+          }
+          else{
+            i=0;
+           n= Math.random()*100;
+            add(n);
+          }
+         }
+         add();
+
+</script>
+</body>
+</html>

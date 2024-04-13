@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Adjuster</title>
+    <style>
+        .counter {
+            margin-bottom: 20px;
+        }
+    </style>
+ </head>
+ <body>
+        <div class="counter">
+        <h3>DEll Lap top: <button onclick="decrease(1)">-</button> <span id="count1">0</span> <button onclick="increase(1)">+</button></h3>
+        </div>
+        <div class="counter">
+        <h3>HP lap top: <button onclick="decrease(2)">-</button> <span id="count2">0</span> <button onclick="increase(2)">+</button></h3>
+        </div>
+        <input type="button" value="Submit" onclick="displayTotal()">
+        <input type="text" id="total" placeholder="Total">
+    
+      <script>
+             let count1 = 0;
+             let count2 = 0;
+
+             function increase(counterNumber) {
+             if(counterNumber == 1) {
+                count1++;
+                document.getElementById('count1').innerText = count1;
+             } else if(counterNumber == 2) {
+                count2++;
+                document.getElementById('count2').innerText = count2;
+              }
+             }
+
+             function decrease(counterNumber) {
+             if(counterNumber == 1) {
+                count1--;
+                document.getElementById('count1').innerText = count1;
+             } else if(counterNumber == 2) {
+                count2--;
+                document.getElementById('count2').innerText = count2;
+              }
+             }
+
+              function displayTotal() {
+             let total = count1 + count2;
+             document.getElementById('total').value = total;
+             }
+     </script>
+ </body>
+</html>

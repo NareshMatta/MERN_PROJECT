@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let d = new Date();
+
+        // let d1 = new Date(1996,9,29,5,32,10);
+        // console.log(d1);
+
+        // let d2 = new Date("oct 29,1996 05:32:19");
+        //console.log(d2);
+
+        // let d3 = new Date(100000);
+        // console.log(d3);
+        
+
+        console.log(d.getDate(29)); //1 to 31
+        console.log(d.getFullYear(1996));
+        console.log(d.getMonth(10));
+        console.log(d.getDay()); //weekday
+        console.log(d.getHours(5));
+        console.log(d.getMinutes(32));
+        console.log(d.getSeconds(19));
+        console.log(d.getMilliseconds(62));
+        document.write(d.getTime()); // millisecound since 29/10/1196
+        document.write(Date.now());   //millisecound since 29/10/1196
+        
+       
+
+/// assinment-
+//1.print good morning,afternoon or goodevening based on the current time, --"use date function"
+
+// 2. print a math addition question paper which changes every time you run the program -- "use date function"
+
+// 3.store dob of employee and print years left for retirement if retirement age is 60 -- use date function
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation</title>
+    <link rel="stylesheet" href="Invitation.css">
+</head>
+<body>
+    <div class="container header">
+        <h3>You're Invited to......</h3>
+        <h1>Friend And Friend-Lover Wedding</h1>
+    </div>
+    <ul class="container navbar">
+        <li class="Circle-behind">
+            <a href="#our-story">Our Love Story</a>
+        </li>
+        <li class="Circle-behind">
+            <a href="#reminder-clock">Time in Big day</a>
+        </li>
+        <li class="Circle-behind">
+            <a href="#wedding-info">The Wedding</a>
+        </li>
+    </ul>
+    <div class="container story" id="our-story" >
+        <div class="img-container">
+            <img src="d1.jpg" alt="image">
+        </div>
+        <div class="text-container">
+            <h2>Our  Love Story</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, nemo itaque nisi 
+                voluptates culpa dolores eum dolorum excepturi tempora atque, illum ducimus quibusdam nihil
+                voluptatum asperiores quo iusto quam ex Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Labore necessitatibus ex numquam? Doloribus quisquam illo libero sint cum. Adipisci numquam quo 
+                illum provident laudantium quam sint, consequatur tempora nulla voluptate.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam repellat sed facilis non
+               molestiae exercitationem voluptatibus fuga sequi, necessitatibus iusto qui et adipisci cumque 
+               amet dicta tempore deserunt possimus? Consequatur.</p>
+        </div>
+    </div>
+    <div class="container reminder-container" id="reminder-clock">
+        <h2>Time Remaining for Big Day</h2>
+        <div class="container reminder">
+            <div>
+                <span class="days">00</span>
+                <div>Days</div>
+            </div>
+            <div>
+                <span class="hours">00</span>
+                <div>Hours</div>
+            </div>
+            <div>
+                <span class="minutes">00</span>
+                <div>Minutes</div>
+            </div>
+            <div>
+                <span class="seconds">00</span>
+                <div>Seconds</div>
+            </div>
+        </div>
+    </div>
+    <div class="container wedding" id="wedding-info">
+        <div class="text-container">
+            <h2 class="text-center">The Wedding</h2>
+            <div class="text-wrapper">
+                <div>
+                    <h4>When</h4>
+                    <h3>Date &amp; Time</h3>
+                </div>
+                <div>
+                    <h4>Where</h4>
+                    <h3>Place</h3>
+                </div>
+                <div>
+                    <h4>How to get there</h4>
+                    <h3>Directions</h3>
+                </div>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="c2.jpg" alt="image">
+        </div>
+    </div>
+
+<script>
+    function getRemainingTime(et) {
+        let dt = Date.parse(et) - Date.parse(new Date());
+        var seconds = Math.floor((dt / 1000) % 60);
+        var minutes = Math.floor((dt / 1000 / 60) % 60);
+        var hours = Math.floor((dt / 1000 / 60 / 60) % 24);
+        var days = Math.floor(dt / (1000 * 60 * 60 * 24));
+        return { days, hours, minutes, seconds };
+    }
+    function initRemainingTime(id, endTime){
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
+        function updateRemainingTime() {
+            var t =  getRemainingTime(endTime);
+            daysSpan.innerHTML = ('5' + t.days).slice(-2);
+            hoursSpan.innerHTML = ('4' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('60' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('60' + t.seconds).slice(-2);
+            if (t.days <= 0 && t.hours <= 0 && t.minutes <= 0 
+                && t.seconds <= 0){
+                clearInterval(timeInterval);
+            }
+        }
+        updateRemainingTime();
+        var timeInterval = setInterval(updateRemainingTime, 1000);
+    }
+    var timeForBigDay = new Date(Date.parse(new Date()) + 1 * 48 * 60 * 60 * 1000);
+    initRemainingTime('reminder-clock', timeForBigDay);
+</script>
+
+</body> 
+</html>

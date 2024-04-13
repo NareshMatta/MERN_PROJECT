@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+</head>
+<body>
+
+    <h2>Shopping Cart</h2>
+    <p>Dell Laptop</p>
+    <button onclick="n()">-</button>
+    <input type="number" value="1" id="g1">
+    <button onclick="m()">+</button>
+<script>
+    let g1 = 1;
+    let txt = document.getElementById('g1');
+    const m = () => {
+        g1++;
+        txt.value = g1;
+    };
+    const n = () => {
+       if(g1 > 0) {
+        g1--;
+        txt.value = g1;
+       } 
+    
+    };
+</script>
+
+</body>
+</html>

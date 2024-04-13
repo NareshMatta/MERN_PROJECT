@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <script>
+             // Function to generate a random integer between min and max (inclusive)
+              function getRandomInt(min, max) {
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+               }
+
+             // Function to generate questions and display them
+                function generateQuestions() {
+             // Array to store the questions and answers
+              window.questions = [];
+             for (let i = 1; i <= 3; i++) {
+                const num1 = getRandomInt(1, 10);
+                const num2 = getRandomInt(1, 10);
+                const operation = Math.random() > 0.5 ? '+' : '-';
+                const question = `${num1} ${operation} ${num2}`;
+                const answer = eval(question);
+                questions.push({question, answer});
+                document.getElementById(`question${i}`).textContent = question;
+             }
+             }
+
+             // Function to check the answers and display the total marks
+             function checkAnswers() {
+               let score = 0;
+               questions.forEach((item, index) => {
+                const userAnswer = parseInt(document.getElementById(`answer${index + 1}`).value, 10);
+                if (userAnswer === item.answer) {
+                    score += 1;
+                }
+              });
+              document.getElementById('totalMarks').value = `${score} / 3`;
+              }
+
+             // Function to reset the quiz
+              function resetQuiz() {
+             window.location.reload();
+             }
+
+              // Call generateQuestions on page load
+                window.onload = function() {
+             generateQuestions();
+               };
+    </script>
+</head>
+<body>
+    <h1>Math Quiz</h1>
+    <div id="question1"></div>
+    <input type="number" id="answer1"><br>
+    <div id="question2"></div>
+    <input type="number" id="answer2"><br>
+    <div id="question3"></div>
+    <input type="number" id="answer3"><br>
+    <br>
+    <button onclick="checkAnswers()">Submit</button>
+    <button onclick="resetQuiz()">Reset</button><br>
+    <br>
+    <input type="text" id="totalMarks" readonly>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p><input type="text" class="c" id="t1" placeholder="Enter Name"></p>
+    <p><input type="text" class="c" id="t2" placeholder="Enter Name"></p>
+    <p><input type="text" class="c" id="t3" placeholder="Enter Name"></p>
+    <button onclick="disp()">Submit</button>
+    <hr>
+    <div id="d"></div>
+    <script>
+        const disp = () => {
+         let names = document.getElementsByClassName("c");
+         let str=""
+         for (let i = 0; i < names.length; i++) {
+            str = str + names[i].value
+         }
+         d.innerHTML = str
+        };
+    </script>
+</body>
+</html>

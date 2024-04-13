@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num1"><br>
+    <input type="number" id="num2"><br>
+    <button onclick="calc()">Submit</button>
+    <p id="p1"></p>
+
+    <script>
+        const calc=()=>{
+            let a=parseInt(num1.value)
+            let b=parseInt(num2.value)
+            
+            p1.innerHTML=`Sum of the inputs=${a+b}`
+
+        }
+    </script>
+
+
+</body>
+</html>

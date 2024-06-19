@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Mobile application</title>
-    <link rel="stylesheet" href="pro2.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
     <div class="main">
@@ -62,25 +62,56 @@
     </div>
 
 <script>
-    var circle = document.getElementById("circle");
-    var upBtn = document.getElementById("upBtn");
-    var downBtn = document.getElementById("downBtn");
+    // var circle = document.getElementById("circle");
+    // var upBtn = document.getElementById("upBtn");
+    // var downBtn = document.getElementById("downBtn");
 
-    var rotateValue = circle.style.transform;
-    var rotateSum;
+    // var rotateValue = circle.style.transform;
+    // var rotateSum;
 
-    upBtn.onclick = function()
-    {
-        rotateSum = rotateValue + "rotate(-90deg)";
-        circle.style.transform = rotateSum;
-        rotateValue = rotateSum;
-    }
-    downBtn.onclick = function()
-    {
-        rotateSum = rotateValue + "rotate(90deg)";
-        circle.style.transform = rotateSum;
-        rotateValue = rotateSum;
-    }
+    // upBtn.onclick = function()
+    // {
+    //     rotateSum = rotateValue + "rotate(-90deg)";
+    //     circle.style.transform = rotateSum;
+    //     rotateValue = rotateSum;
+    // }
+    // downBtn.onclick = function()
+    // {
+    //     rotateSum = rotateValue + "rotate(90deg)";
+    //     circle.style.transform = rotateSum;
+    //     rotateValue = rotateSum;
+    // }
+
+
+
+
+    
+        var circle = document.getElementById("circle");
+        // var upBtn = document.getElementById("upBtn");
+        // var downBtn = document.getElementById("downBtn");
+
+        var rotateValue = circle.style.transform || "rotate(0deg)";
+        var rotateSum;
+
+        function rotateCircle(degrees) {
+            rotateSum = rotateValue + " rotate(" + degrees + "deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+        }
+
+        upBtn.onclick = function() {
+            rotateCircle(-90);
+        }
+
+        downBtn.onclick = function() {
+            rotateCircle(90);
+        }
+
+        // Automatic rotation every 10 seconds
+        setInterval(function() {
+            rotateCircle(90);
+        }, 5000);
+    
 
 </script>
 
